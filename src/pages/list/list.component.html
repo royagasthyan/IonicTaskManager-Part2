@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Ionic Task Manager</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-fab top right>
+   <button ion-fab mini (click)="presentAddModal()"><ion-icon name="add"></ion-icon></button>
+ </ion-fab>
+
+ <ion-card>
+  <ion-card-header>
+    My Tasks
+  </ion-card-header>
+
+  <ion-list>
+
+     <ion-item *ngFor="let item of pendingTasks">
+
+      <ion-label >{{item.Name}} </ion-label>
+      <ion-checkbox name="chk" (click)="checkPendingItem(item.Id)" [checked]="item.IsDone" ></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+</ion-card>
+
+ <ion-card>
+  <ion-card-header>
+    Archived Tasks
+  </ion-card-header>
+
+  <ion-list>
+
+     <ion-item *ngFor="let item of doneTasks">
+      
+    <ion-label color="light">{{item.Name}} </ion-label>
+    <ion-checkbox name="chk" (click)="checkDoneItem(item.Id)" [checked]="item.IsDone" ></ion-checkbox>
+   
+  </ion-item>
+
+  </ion-list>
+</ion-card>
+
+</ion-content>

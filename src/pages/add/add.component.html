@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Ionic Task Manager</ion-title>
+  </ion-navbar>
+ 
+</ion-header>
+
+<ion-content padding>
+	 <ion-fab top right>
+   <button ion-fab mini (click)="dismiss()"> <ion-icon name="arrow-back"></ion-icon></button>
+ </ion-fab>
+ 
+  <ion-list>
+
+
+  <ion-item>
+    <ion-label color="primary" floating>Enter task </ion-label>
+    <ion-input name="add" [(ngModel)]="item"></ion-input>
+  </ion-item>
+
+
+
+  
+</ion-list>
+
+<button ion-button round (click)="add()">Add</button>
+
+
+  
+</ion-content>
